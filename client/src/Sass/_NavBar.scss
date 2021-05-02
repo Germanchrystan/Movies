@@ -1,0 +1,31 @@
+.NavBar{
+    display: flex;
+    background: black;
+    font-size: 62.5%;
+    justify-content: space-between;
+    a{
+        padding:2rem 1rem;
+        font-size: 1.5rem;
+        text-decoration: none;
+        color:white;
+    }
+
+    .NavBar__Links{
+        margin-right: 2rem;
+        ul{
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            
+            font-size: 1rem;
+            padding:2rem 1rem;
+            width: 110%;
+            li{
+                border-radius: 15px;
+                background: lightblue;
+                color: white;
+                padding: .5rem;
+            }
+        }
+    }
+}

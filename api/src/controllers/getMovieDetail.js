@@ -8,7 +8,7 @@ const getMovieDetail = async (req,res)=>{
     
     const { id } = req.params;
 
-    const { data } = await axios(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`);
+    const { data } = await axios(`http://www.omdbapi.com/?apikey=${APIKEY}&i=${id}`);
 
     return res.json(data).status(200);
 }    

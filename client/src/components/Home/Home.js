@@ -1,37 +1,25 @@
-import React, {useEffect } from "react";
-import { getMovies } from "../../actions/"
+import React  from "react";
+import { getMovies } from "../../actions";
+import Card from "../Card/Card";
 import {connect} from "react-redux";
 import SearchBar from "../SearchBar/SearchBar";
 import Spinner from "../Spinner/Spinner";
 
 function Home(props){
-
-    // useEffect(() => {
-    //     async function fetchData() {
-    //       await props.emptyRecipes();
-    //       await props.getRecipes(props.page, props.title, props.diet, props.orderBy, props.orderWay);
-          
-    //     }
-    //     fetchData()
-        
-    //   }, [props.page, props.title, props.diet]);
-    
-
-
     return (
 
         <div>
           <SearchBar />
           <br/>
           <hr />
-            <ul>
-              {Array.isArray(props.movies)?
-                props.movies.map((m)=><li>{m.Title}</li>)
+            <ul className="ResultList">
+              {Array.isArray(props.movies.Search)?
+                props.movies.Search.map((m)=><li key={m.imdbID}>
+                  <Card id={m.imdbID} title={m.Title} poster={m.Poster} year={m.Year}/>
+                  </li>)
                 :<Spinner />
               }
             </ul>
-
-            
         </div>
     )
 }

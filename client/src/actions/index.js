@@ -6,6 +6,7 @@ export const SET_TITLE = "SET_TITLE";
 
 //==============================================================//
 export function getMovies(title){
+    console.log("ACTION")
     return function(dispatch){
         axios.get(`http://localhost:3001/movies?title=${title}`)
         .then((result) => {dispatch({type:GET_MOVIES, payload: result.data})})

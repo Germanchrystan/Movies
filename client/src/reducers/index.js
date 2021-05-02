@@ -1,7 +1,7 @@
 import { GET_MOVIES, GET_MOVIE_DETAIL, SET_TITLE } from "../actions";
 //===================================INITIAL STATE========================================//
 const initialState = {
-    movies:{},
+    movies:[],
     movieDetail : {},
     page: 0,
     title:"",
@@ -11,6 +11,7 @@ const initialState = {
 function rootReducer(state = initialState, action){
     //================================GETTERS==================================//
     if(action.type === GET_MOVIES){
+        console.log("DEL REDUCER", action.payload)
         return {
             ...state,
             movies: action.payload

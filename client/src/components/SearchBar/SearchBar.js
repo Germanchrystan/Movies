@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {setTitle, getMovies} from "../../actions/"
+import {setTitle, getMovies} from "../../actions"
 import {connect} from "react-redux";
 //import "./SearchBar.css";
 
@@ -68,9 +68,9 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch) {
     return {
         setTitle: (title) => dispatch(setTitle(title)),
-        getRecipes: (title) => dispatch(getMovies(title)),
+        getMovies: (title) => dispatch(getMovies(title)),
     }
 }
   
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar)
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
 

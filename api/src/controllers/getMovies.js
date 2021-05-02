@@ -9,7 +9,7 @@ const getMovies = async (req,res)=>{
     const { title } = req.query;
 
     const { data } = await axios(`http://www.omdbapi.com/?apikey=${APIKEY}&s=${title}`);
-
+    console.log(data);
     return res.json(data).status(200);
 }    
 
